@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M1L6--DOCTOR'S APPOINTMENT FORM</title>
+</head>
+<body>
+ <i><h1>Zydus Hospital.</h1></i>
+<h2><p>Fill the below form to book your appointment.</p></h2>
+<hr>
+<form>
+<fieldset>
+<legend>
+    <h3>Personal Details</h3>
+</legend>
+
+<label for="name">Your Name:</label><br>
+    <input type = "text" id="name" placeholder="Enter Full Name">
+
+<br><br>
+
+<label for="patient-id">Patient ID:</label><br>
+<input type="password" id="patient-id" placeholder="Enter ID Password">
+
+<br><br>
+
+<label for="DOB">Date Of Birth:</label><br>
+<input type="Date" id="DOB">
+
+</fieldset>
+<br>
+<fieldset>
+<legend>
+   <h3> Your Visit</h3>
+</legend>
+<label for = "doctor">Choose Your Doctor</label> <br>
+<select id="doctor">
+<option value="">Selct The Doctor</option>
+<option value="">Dr. Stone - Heart</option>
+<option value="">Dr. Son Goku - Lungs</option>
+</select>
+<br><br>
+
+<label for="notes">Any Notes?</label><br>
+<textarea id="notes" rows="3" cols="35"placeholder="Eg:I have a sore throat"></textarea>
+</fieldset><br>
+
+<fieldset>
+
+<legend>
+Preferred Visit Day</legend>
+
+<input type="checkbox" name="day">Monday<br>
+<input type="checkbox" name="day">Wednesday<br>
+<input type="checkbox" name="day">Friday<br>
+
+<br><br>
+<label>
+Why are you visiting for?<br>
+</label>
+ <input type="radio" name="day">Fever<br>
+<input type="radio" name="day">Headache<br>
+<input type="radio" name="day">Cold<br>
+
+</fieldset>
+<input type="submit" value="Book Appointment">
+<input type="reset" value="Clear form">
+</form>
+</body>
+</html>
