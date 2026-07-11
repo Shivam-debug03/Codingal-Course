@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Food and Nutrition Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f6fbf9;
+            --card: #ffffff;
+            --text: #163a2b;
+            --muted: #4b6470;
+            --accent: #2b8a6f;
+            --glass: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, var(--bg), #eef7f2);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.45;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--accent), #5fb497);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(43, 138, 111, 0.12);
+        }
+
+        header h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.5rem
+        }
+
+        nav {
+            margin-top: .6rem
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.92);
+            text-decoration: none;
+            padding: .35rem .6rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: .9rem
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.12)
+        }
+
+        main {
+            display: block;
+            margin-top: 1.25rem
+        }
+
+        section {
+            margin-bottom: 1.25rem
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: .6rem
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem
+        }
+
+        article {
+            background: var(--card);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(12, 40, 34, 0.06)
+        }
+
+        figure {
+            margin: 0 0 .6rem 0
+        }
+
+        figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block
+        }
+
+        figcaption {
+            font-size: .85rem;
+            color: var(--muted);
+            margin-top: .4rem
+        }
+
+        aside {
+            background: linear-gradient(180deg, var(--accent), rgba(255, 255, 255, 0.85));
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(12, 40, 34, 0.04)
+        }
+
+        a {
+            color: var(--accent)
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: .95rem
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root {
+                --bg: #071012;
+                --card: #072422;
+                --text: #d7fff0;
+                --muted: #9fc6b6;
+                --accent: #4ad29a
+            }
+
+            body {
+                background: linear-gradient(180deg, var(--bg), #06211a)
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Healthy Bites: Food and Nutrition Blog</h1>
+
+        <nav>
+            <a href="#healthy-plate">Healthy Plate</a> |
+            <a href="#nutrition-tips">Nutrition Tips</a> |
+            <a href="#video">Watch Video</a> |
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section id="healthy-plate">
+            <h2>Building a Healthy Plate</h2>
+
+            <div class="grid">
+                <article>
+                    <h3>Why a Balanced Meal Matters</h3>
+
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=500&fit=crop"
+                            alt="A balanced meal plate with fruits, vegetables, grains, and protein">
+                        <figcaption>
+                            A balanced plate includes fruits, vegetables, grains, protein, and water.
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        A healthy plate gives our body the energy it needs to study, play, think, and grow.
+                        It should include colourful fruits, fresh vegetables, grains, and protein-rich food.
+                    </p>
+
+                    <p>
+                        Learn more about healthy eating here:
+                        <a href="https://www.myplate.gov/" target="_blank">
+                            MyPlate Nutrition Guide
+                        </a>
+                    </p>
+
+                </article>
+
+                <article>
+                    <h3>Smart Snack Choices</h3>
+
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1543353071-087092ec393f?w=800&h=500&fit=crop"
+                            alt="Healthy snacks like fruits, nuts and yoghurt">
+                        <figcaption>
+                            Healthy snacks can include fruits, nuts, yoghurt, or homemade food.
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        Snacks can be healthy when we choose foods that give energy instead of only sugar.
+                        Fruits, nuts, sprouts, and yoghurt are better choices than chips and sugary drinks.
+                    </p>
+
+                    <p>
+                        Explore more nutrition facts here:
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank">
+                            WHO Healthy Diet Guide
+                        </a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="nutrition-tips">
+            <h2>Nutrition Tips for Students</h2>
+
+            <div class="grid">
+                <article>
+                    <h3>Drink Enough Water</h3>
+
+                    <p>
+                        Water helps the body stay active, supports digestion, and keeps the brain focused.
+                        Students should carry a water bottle and drink water throughout the day.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Eat Colourful Food</h3>
+
+                    <p>
+                        Different colours in fruits and vegetables give different nutrients. A colourful plate
+                        often means a healthier plate.
+                    </p>
+
+                    <p>
+                        Read more about healthy food choices here:
+                        <a href="https://www.nutrition.gov/" target="_blank">
+                            Nutrition.gov
+                        </a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <aside>
+            <h2>Quick Nutrition Note</h2>
+
+            <div>
+                <p>
+                    Try this simple rule: fill half your plate with fruits and vegetables, one quarter with
+                    grains, and one quarter with protein.
+                </p>
+
+                <p>
+                    Share your healthy recipe here:
+                    <a href="https://forms.gle/" target="_blank">
+                        Recipe Submission Form
+                    </a>
+                </p>
+            </div>
+        </aside>
+
+        <section id="video">
+            <h2>Watch and Learn About Nutrition</h2>
+
+            <p>
+                Watch this video to understand how food choices can support a healthy lifestyle.
+            </p>
+
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/xyQY8a-ng6g" title="Nutrition Video"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact the Nutrition Blog Team</h2>
+
+            <p>
+                Have a healthy recipe or food tip to share? Send it to us.
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:nutritionblog@example.com">
+                    nutritionblog@example.com
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Healthy Bites Food and Nutrition Blog. All rights reserved.</p>
+
+        <p>
+            Learn more about healthy habits:
+            <a href="https://www.nutrition.gov/" target="_blank">
+                Nutrition.gov
+            </a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
