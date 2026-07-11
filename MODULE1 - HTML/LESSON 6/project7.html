@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Of The Year Voting Form.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-1: #070715;
+            --bg-2: #0f1724;
+            --accent1: #ff5c7c;
+            --accent2: #ffd166;
+            --muted: #9fb3c8;
+            --card: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: radial-gradient(800px 400px at 10% 20%, rgba(255, 92, 124, 0.06), transparent), radial-gradient(900px 450px at 90% 80%, rgba(255, 209, 102, 0.04), transparent), linear-gradient(180deg, var(--bg-1), var(--bg-2));
+            font-family: Poppins, system-ui, Segoe UI, Roboto, Arial;
+            color: #eaf6ff
+        }
+
+        .card {
+            width: 100%;
+            max-width: 820px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 18px 50px rgba(2, 6, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(6px)
+        }
+
+        header.top {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent1), var(--accent2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #071021;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 28px rgba(255, 92, 124, 0.12)
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.6rem
+        }
+
+        .sub {
+            margin: 6px 0 0 0;
+            color: var(--muted);
+            font-size: .95rem
+        }
+
+        .underline {
+            height: 8px;
+            width: 180px;
+            border-radius: 8px;
+            margin-top: .8rem;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            box-shadow: 0 12px 34px rgba(255, 92, 124, 0.12)
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem
+        }
+
+        .full {
+            grid-column: 1/-1
+        }
+
+        label {
+            display: block;
+            font-size: .9rem;
+            color: var(--muted);
+            margin-bottom: .35rem
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: .7rem .85rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: transparent;
+            color: inherit;
+            font-size: 1rem;
+            transition: transform .12s ease, box-shadow .12s ease
+        }
+
+        input[type=text]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(43, 138, 111, 0.06)
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        .radio-group {
+            display: flex;
+            gap: .6rem;
+            flex-wrap: wrap
+        }
+
+        .radio {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            padding: .55rem .75rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+            cursor: pointer;
+            transition: transform .12s ease, box-shadow .12s ease
+        }
+
+        .radio input {
+            display: none
+        }
+
+        .radio .label-text {
+            color: var(--muted)
+        }
+
+        .radio input:checked+.label-text {
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: #071021;
+            padding: .25rem .6rem;
+            border-radius: 8px;
+            box-shadow: 0 12px 36px rgba(255, 92, 124, 0.12)
+        }
+
+        .radio:hover {
+            transform: translateY(-4px)
+        }
+
+        .actions {
+            display: flex;
+            gap: .6rem;
+            justify-content: flex-end;
+            margin-top: 1rem
+        }
+
+        button {
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: #071021;
+            padding: .72rem 1.05rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 14px 40px rgba(43, 138, 111, 0.09);
+            transition: transform .14s ease, box-shadow .14s ease
+        }
+
+        button.secondary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--muted);
+            font-weight: 600
+        }
+
+        button:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(43, 138, 111, 0.12)
+        }
+
+        .note {
+            font-size: .85rem;
+            color: var(--muted);
+            margin-top: .5rem
+        }
+
+        /* confetti */
+        .confetti-piece {
+            position: fixed;
+            width: 10px;
+            height: 16px;
+            opacity: 0;
+            pointer-events: none;
+            transform-origin: center;
+            z-index: 9999
+        }
+
+        /* toast */
+        .toast {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%) translateY(24px);
+            bottom: 28px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: #071021;
+            padding: .9rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 18px 48px rgba(43, 138, 111, 0.12);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform .28s cubic-bezier(.2, .9, .3, 1), opacity .2s
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0)
+        }
+
+        @media(max-width:680px) {
+            form {
+                grid-template-columns: 1fr
+            }
+
+            .actions {
+                justify-content: stretch
+            }
+
+            .underline {
+                width: 130px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <header class="top">
+            <div class="logo">AF</div>
+            <div>
+                <h1>Anime Of The Year Voting Form</h1>
+                <p class="sub">Choose and celebrate your favourite anime of the year.</p>
+                <div class="underline" aria-hidden="true"></div>
+            </div>
+        </header>
+
+        <form id="voteForm" action="#" method="post" aria-label="Anime voting form">
+            <div>
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" placeholder="Enter your name">
+            </div>
+
+            <div>
+                <label for="email">Email (optional)</label>
+                <input id="email" name="email" type="text" placeholder="you@example.com">
+            </div>
+
+            <div class="full">
+                <label for="anime">Pick your Anime of the Year</label>
+                <select id="anime" name="anime">
+                    <option>-- Select anime --</option>
+                    <option>Attack on Titan</option>
+                    <option>Jujutsu Kaisen</option>
+                    <option>Demon Slayer</option>
+                    <option>SPY x FAMILY</option>
+                    <option>Chainsaw Man</option>
+                    <option>Dragon Ball</option>
+                    <option>Bleach</option>
+                    <option>Naruto</option>
+                    <option>One Piece</option>
+                    <option>Gachikuta</option>
+                </select>
+            </div>
+
+            <div>
+                <label>How would you rate it?</label>
+                <div class="radio-group">
+                    <label class="radio"><input type="radio" name="rating" value="5"><span class="label-text">5 -
+                            Amazing</span></label>
+                    <label class="radio"><input type="radio" name="rating" value="4"><span class="label-text">4 -
+                            Great</span></label>
+                    <label class="radio"><input type="radio" name="rating" value="3"><span class="label-text">3 -
+                            Good</span></label>
+                    <label class="radio"><input type="radio" name="rating" value="2"><span class="label-text">2 -
+                            Okay</span></label>
+                    <label class="radio"><input type="radio" name="rating" value="1"><span class="label-text">1 - Not
+                            for me</span></label>
+                </div>
+            </div>
+
+            <div class="full">
+                <label for="why">Why did you pick this anime? (optional)</label>
+                <textarea id="why" name="why" placeholder="Short note or reason..."></textarea>
+            </div>
+
+            <div class="full actions">
+                <button type="button" id="clearBtn" class="secondary">Clear</button>
+                <button type="submit">Submit Vote</button>
+            </div>
+        </form>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite">Thanks — your vote has been submitted!</div>
+    <script>
+        const form = document.getElementById('voteForm');
+        const toast = document.getElementById('toast');
+        const clearBtn = document.getElementById('clearBtn');
+
+        clearBtn.addEventListener('click', () => form.reset());
+
+        // small confetti burst
+        function burstConfetti(x, y) {
+            const colors = ['#ff5c7c', '#ffd166', '#7ef7d0', '#7ec8ff', '#c796ff'];
+            for (let i = 0; i < 26; i++) {
+                const el = document.createElement('div');
+                el.className = 'confetti-piece';
+                el.style.background = colors[Math.floor(Math.random() * colors.length)];
+                el.style.left = x + 'px';
+                el.style.top = y + 'px';
+                document.body.appendChild(el);
+                const dx = (Math.random() - 0.5) * 600;
+                const dy = - (100 + Math.random() * 600);
+                const rot = (Math.random() * 720 - 360);
+                el.animate([
+                    { transform: `translate(0,0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate(${dx}px,${dy}px) rotate(${rot}deg)`, opacity: 0 }
+                ], { duration: 1800 + Math.random() * 600, easing: 'cubic-bezier(.2,.7,.1,1)' }).onfinish = () => el.remove();
+            }
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // show toast
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2600);
+            // confetti at center-bottom of card
+            const rect = document.querySelector('.card').getBoundingClientRect();
+            burstConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
+            // disable submit briefly
+            const submit = form.querySelector('button[type=submit]');
+            submit.disabled = true; submit.style.opacity = '0.7';
+            setTimeout(() => { submit.disabled = false; submit.style.opacity = '1'; form.reset(); }, 1600);
+        });
+    </script>
+</body>
+
+</html>
