@@ -1,0 +1,58 @@
+body
+{
+    background-color: darkblue;
+    background-image: linear-gradient(45deg ,  midnightblue , purple);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.page-header
+{
+background: #2A7B9B;
+background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 188, 199, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+}
+
+.fact-card {
+    background-color: mediumblue;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+.fact-card h2 {
+    color: coral;
+}
+
+.star {
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    border-radius: 50%;
+    animation: shake 2s infinite alternate;
+    margin: 0 auto;
+}
+
+@keyframes twinkle 
+{
+from
+{
+background-color: gold ;
+}
+to
+{
+background-color: white;
+}
+}
+
+@keyframes shake {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(2)
+    }
+}
+
+
