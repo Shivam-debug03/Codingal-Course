@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Restaurant Menu Card.</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .menu-card {
+            background: linear-gradient(to bottom, #fafaf8, #f5f5f1);
+            border-radius: 20px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(212, 175, 55, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #d4af37;
+            padding: 50px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        .menu-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2em;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-header p {
+            font-size: 1.1em;
+            opacity: 0.85;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 20px 0;
+        }
+
+        .menu-items {
+            padding: 45px 40px;
+        }
+
+        .menu-item {
+            margin-bottom: 35px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), transparent);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .menu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.15),
+                0 0 20px rgba(212, 175, 55, 0.3);
+            border-left-color: #ffd700;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+
+        .item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #1a1a2e;
+            flex: 1;
+        }
+
+        .item-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            color: #d4af37;
+            font-weight: 700;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .item-price::before {
+            content: '₹ ';
+        }
+
+        .item-description {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu-footer {
+            text-align: center;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #d4af37;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="menu-card">
+        <div class="menu-header">
+            <h1>🍽️ MENU</h1>
+            <div class="divider"></div>
+            <p>Fine Dining Experience</p>
+        </div>
+
+        <div class="menu-items">
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Butter Chicken</span>
+                    <span class="item-price">499</span>
+                </div>
+                <p class="item-description">Famous Indian dish featuring tender pieces of marinated, grilled chicken
+                    simmered in a rich, velvety tomato and butter sauce. Known for its creamy texture and mild, slightly
+                    smoky flavor.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Veg / Non Veg Momos</span>
+                    <span class="item-price">199</span>
+                </div>
+                <p class="item-description">Popular Himalayan dumplings with thin, rolled dough wrapper folded around
+                    savory filling. Veg momos contain crunchy vegetables, while non-veg features juicy, spiced meats.
+                </p>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Braised Pork</span>
+                    <span class="item-price">399</span>
+                </div>
+                <p class="item-description">Slow-cooked pork belly or shoulder seared to lock in moisture, then simmered
+                    with liquid and aromatics. Incredibly juicy with deeply flavorful, glossy sauce.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Miso Chashu Pork Ramen</span>
+                    <span class="item-price">299</span>
+                </div>
+                <p class="item-description">Rich, hearty Japanese noodle soup featuring savory, umami-packed fermented
+                    soybean broth and topped with thick, melt-in-your-mouth slices of tender braised pork belly.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Grilled Meat</span>
+                    <span class="item-price">599</span>
+                </div>
+                <p class="item-description">Premium cuts cooked over high, direct heat developing signature smoky
+                    flavor, charred exterior, and juicy interior. Perfect for steaks, poultry, and kebabs.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Chocolate Lava Cake</span>
+                    <span class="item-price">399</span>
+                </div>
+                <p class="item-description">Decadent warm chocolate cake with a molten center, served with premium
+                    vanilla ice cream. A perfect indulgence for chocolate lovers.</p>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-header">
+                    <span class="item-name">Karashi Mentaiko Spicy Cod Roe</span>
+                    <span class="item-price">699</span>
+                </div>
+                <p class="item-description">Prized Japanese delicacy made from salted Alaska pollock roe marinated in
+                    chili and dashi-based spice blend. Delivers oceanic brininess, rich umami, and warming chili heat.
+                </p>
+            </div>
+        </div>
+
+        <div class="menu-footer">
+            THANK YOU FOR YOUR VISIT
+        </div>
+    </div>
+</body>
+
+</html>
