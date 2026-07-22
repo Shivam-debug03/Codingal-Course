@@ -1,65 +1,326 @@
 <!DOCTYPE html>
-
-
-
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Lesson 2 Project 2 - Mini Biography</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Jackson - Mini Biography</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-</head>                <body><h1><p>Mini Biography - Michael Jackson</h1></p>
-<h2>Michael Joseph Jackson (Born August 29, 1958 (Gary, Indiana) and Died June 25, 2009 (Los Angeles, California)).</h2>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
 
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
 
-    <p>Michael Joseph Jackson was an American singer, songwriter, and dancer. Dubbed the <b><i>"King of Pop"</i></b>, he is regarded as one of the most significant cultural figures of the 20th century.
-    <p>Jackson's contributions to music, dance, and fashion, along with his publicized personal life, made him a global figure in popular culture for over four decades.</p>
-<h2>The Early Years & The Jackson 5</h2>
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
 
+        .content {
+            padding: 50px 40px;
+        }
 
-    <p><b><i>Beginnings</i></b>: He started performing as a child prodigy and became the lead singer of his
-family's group, the Jackson 5, with Motown hits like "I Want You Back".</p>
+        .intro-section {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+        }
 
-<p><b><i>Breakthrough</i></b>: The Jackson 5's success paved the way for his solo career, which began in the early 1970s.</p>
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
 
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f5576c, #667eea);
+            border-radius: 2px;
+        }
 
+        .section {
+            margin-bottom: 30px;
+        }
 
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            color: #555;
+        }
 
-<h2><b><i><p>Solo Career & Major Achievements</i></b></h2><br> <b><i>The Thriller Phenomenon</i></b>: After going solo, his 1982 album Thriller became—and
-remains—the best-selling album of all time.</p>
+        .highlight {
+            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: inline-block;
+        }
 
+        .achievement-item {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .achievement-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
 
-<b><i>Visual Storytelling</i></b>: He revolutionized the medium of music videos with
-cinematic and complex productions for songs like <h3><mark>"Billie Jean," "Beat It," and "Thriller"</mark></h3>
+        .achievement-item strong {
+            color: #f5576c;
+            font-size: 1.1em;
+        }
 
-<h2>Dance, Style & Legacy</h2>
+        blockquote {
+            border-left: 5px solid #f5576c;
+            padding: 30px 25px;
+            margin: 40px 0;
+            background: linear-gradient(to right, rgba(245, 87, 108, 0.1) 0%, transparent 100%);
+            border-radius: 5px;
+        }
 
+        blockquote p {
+            font-size: 1.3em;
+            font-style: italic;
+            color: #764ba2;
+            margin: 0;
+        }
 
+        .footer {
+            background: #f0f0f0;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            font-size: 0.95em;
+        }
 
+        .header {
+            position: relative;
+            overflow: hidden;
+        }
 
-<p><b><i>Signature Moves</i></b>: He popularized intricate dance routines, most notably his famous glide known as
-the <h3><b><mark>"Moonwalk"</mark></b>.</h3></p>
+        .header::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.35), transparent 55%);
+            top: -30px;
+            right: -30px;
+            transform: rotate(15deg);
+        }
 
+        .content {
+            padding: 50px 40px;
+            display: grid;
+            gap: 30px;
+        }
 
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
 
-<p><b><i>Trademarks</i></b>: Known for his signature aesthetic, including a <b><i>single sequined white glove, black fedora, and
-white socks with black shoes</i></b>.</p>
+        .fact-card {
+            background: #fff;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.08);
+        }
 
+        .fact-card strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #764ba2;
+        }
 
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 0;
+            }
 
+            .header {
+                padding: 40px 20px;
+            }
 
+            .header h1 {
+                font-size: 2em;
+            }
 
-<h2>Humanitarianism/Activism</i></b></p></h2> Beyond music, he actively supported humanitarian causes and wrote benefit songs like "We Are
-the World" (with Lionel Richie) to raise millions for famine relief.</p>
+            .content {
+                padding: 30px 20px;
+            }
 
+            h2 {
+                font-size: 1.5em;
+            }
 
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
 
-<blockquote>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎤 Michael Jackson</h1>
+            <p>The King of Pop - A Legacy That Changed Music Forever</p>
+        </div>
 
+        <main class="content">
+            <!-- Introduction Section -->
+            <section class="intro-section">
+                <p><strong>Michael Joseph Jackson</strong> (August 29, 1958 – June 25, 2009)</p>
+                <p>Born in Gary, Indiana | Passed in Los Angeles, California</p>
+            </section>
 
-    <h2><p><i>"If you wanna make the world a better place, take a look at yourself, and make the change."</i></p></h2>
-</blockquote>
+            <!-- Overview -->
+            <section class="section">
+                <p>Michael Joseph Jackson was an American singer, songwriter, and dancer. Dubbed the <span
+                        class="highlight">King of Pop</span>, he is regarded as one of the most significant cultural
+                    figures of the 20th century.</p>
+                <p>Jackson's contributions to music, dance, and fashion, along with his publicized personal life, made
+                    him a global figure in popular culture for over four decades.</p>
+            </section>
+
+            <section class="section">
+                <h2>Quick Facts</h2>
+                <div class="fact-grid">
+                    <div class="fact-card">
+                        <strong>First Solo #1</strong>
+                        <p>At age 13, Michael scored his first solo top 10 hit with "Ben" in 1972.</p>
+                    </div>
+                    <div class="fact-card">
+                        <strong>Grammy Record</strong>
+                        <p>He won 8 Grammy Awards in a single night for <em>Thriller</em>, tying the record at the time.
+                        </p>
+                    </div>
+                    <div class="fact-card">
+                        <strong>Oscar Winner</strong>
+                        <p>He won an Academy Award for Best Original Song Score for the film <em>Escape</em>.</p>
+                    </div>
+                    <div class="fact-card">
+                        <strong>Global Impact</strong>
+                        <p>His tours were among the highest-grossing live concert events in the world.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Early Years -->
+            <section class="section">
+                <h2>The Early Years &amp; The Jackson 5</h2>
+                <div class="achievement-item">
+                    <strong>🌟 Beginnings</strong>
+                    <p>He started performing as a child prodigy and became the lead singer of his family's group, the
+                        Jackson 5, with Motown hits like "I Want You Back".</p>
+                </div>
+                <div class="achievement-item">
+                    <strong>🚀 Breakthrough</strong>
+                    <p>The Jackson 5's success paved the way for his solo career, which began in the early 1970s.</p>
+                </div>
+            </section>
+
+            <!-- Solo Career -->
+            <section class="section">
+                <h2>Solo Career &amp; Major Achievements</h2>
+                <div class="achievement-item">
+                    <strong>💿 The Thriller Phenomenon</strong>
+                    <p>After going solo, his 1982 album <em>Thriller</em> became—and remains—the best-selling album of
+                        all time.</p>
+                </div>
+                <div class="achievement-item">
+                    <strong>🎬 Visual Storytelling</strong>
+                    <p>He revolutionized the medium of music videos with cinematic and complex productions for songs
+                        like <span class="highlight">Billie Jean</span>, <span class="highlight">Beat It</span>, and
+                        <span class="highlight">Thriller</span>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Dance & Style -->
+            <section class="section">
+                <h2>Dance, Style &amp; Legacy</h2>
+                <div class="achievement-item">
+                    <strong>💃 Signature Moves</strong>
+                    <p>He popularized intricate dance routines, most notably his famous glide known as the <span
+                            class="highlight">Moonwalk</span>.</p>
+                </div>
+                <div class="achievement-item">
+                    <strong>✨ Iconic Trademarks</strong>
+                    <p>Known for his signature aesthetic, including a single sequined white glove, black fedora, and
+                        white socks with black shoes.</p>
+                </div>
+            </section>
+
+            <!-- Humanitarianism -->
+            <section class="section">
+                <h2>Humanitarianism &amp; Activism</h2>
+                <p>Beyond music, he actively supported humanitarian causes and wrote benefit songs like <strong>"We Are
+                        the World"</strong> (with Lionel Richie) to raise millions for famine relief.</p>
+            </section>
+
+            <!-- Quote -->
+            <blockquote>
+                <p>"If you wanna make the world a better place, take a look at yourself, and make the change."</p>
+            </blockquote>
+        </main>
+
+        <footer class="footer">
+            <p>✨ Celebrating the life and legacy of the King of Pop</p>
+        </footer>
+    </div>
 </body>
+
 </html>
