@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream Wala</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, serif;
+      color: #542d20;
+      background: linear-gradient(135deg, #fff4d6, #ffe1ec);
+    }
+
+    header {
+      padding: 55px 20px;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(#8b1e3ccc, #d35400dd),
+        url("https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1400&q=80")
+        center / cover;
+    }
+
+    header h1 {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 5px #542d20;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 1.2rem;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 45px auto;
+      padding: 20px;
+    }
+
+    .card {
+      position: relative;
+      padding: 30px 22px;
+      overflow: hidden;
+      text-align: center;
+      background: #fffdf7;
+      border: 2px solid #e6a532;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px #8b1e3c33;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card::before {
+      content: "✦";
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      color: #e6a532;
+      font-size: 25px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) rotate(1deg);
+      box-shadow: 0 18px 30px #8b1e3c44;
+    }
+
+    .emoji {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 95px;
+      height: 95px;
+      margin-bottom: 15px;
+      font-size: 58px;
+      background: #fff0c2;
+      border-radius: 50%;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #a52a4b;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      min-height: 48px;
+      color: #76584d;
+      line-height: 1.5;
+    }
+
+    .price {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 8px 18px;
+      color: white;
+      background: #138808;
+      border-radius: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 22px;
+      text-align: center;
+      color: white;
+      background: #542d20;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 40px 15px;
+      }
+
+      .menu {
+        margin: 20px auto;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🍦 Ice Cream Wala</h1>
+    <p>Desi flavours, chilled with love! 🇮🇳</p>
+  </header>
+
+  <main class="menu">
+    <div class="card">
+      <div class="emoji">🥭</div>
+      <h2>Aam Ras</h2>
+      <p>Alphonso mango ice cream with juicy mango pieces.</p>
+      <span class="price">₹120</span>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🍨</div>
+      <h2>Kesar Pista</h2>
+      <p>Saffron ice cream topped with crunchy pistachios.</p>
+      <span class="price">₹150</span>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🍦</div>
+      <h2>Malai Kulfi</h2>
+      <p>Traditional creamy kulfi with cardamom and nuts.</p>
+      <span class="price">₹140</span>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🌹</div>
+      <h2>Gulkand Rose</h2>
+      <p>Rose ice cream filled with sweet gulkand.</p>
+      <span class="price">₹130</span>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🍃</div>
+      <h2>Paan Ice Cream</h2>
+      <p>Refreshing paan-flavoured ice cream with nuts.</p>
+      <span class="price">₹160</span>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🍮</div>
+      <h2>Jalebi Rabri Sundae</h2>
+      <p>Jalebi served with delicious rabri ice cream.</p>
+      <span class="price">₹180</span>
+    </div>
+  </main>
+
+  <footer>
+    Visit Ice Cream Wala today! 🍧
+  </footer>
+</body>
+</html>
