@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adventure Park Challenge</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      color: #263238;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #fff8e1);
+    }
+
+    .hero {
+      padding: 70px 20px;
+      color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #00695c, #26a69a);
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin-top: 35px;
+      color: #00695c;
+      font-weight: bold;
+    }
+
+    h3 {
+      color: #ef6c00;
+      
+    }
+
+    h4 {
+      color: #00838f;
+    }
+
+    h5 {
+      color: #5d4037;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 15px;
+    }
+
+    .section-card {
+      margin: 25px 0;
+      padding: 25px;
+      text-align: center;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 6px 18px #26323825;
+    }
+
+    .level-card {
+      height: 100%;
+      padding: 22px;
+      color: white;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #ff9800, #f57c00);
+    }
+
+    .pass-card {
+      height: 100%;
+      padding: 20px;
+      border-left: 6px solid #26a69a;
+      border-radius: 12px;
+      background: #e0f2f1;
+    }
+
+    dl {
+      text-align: left;
+    }
+
+    dt {
+      margin-top: 15px;
+      color: #00695c;
+      font-size: 18px;
+    }
+
+    dd {
+      margin-bottom: 10px;
+    }
+
+    mark {
+      padding: 5px 9px;
+      color: white;
+      background: #ef6c00;
+      border-radius: 6px;
+    }
+
+    code,
+    pre {
+      color: #b2ff59;
+      background: #263238;
+      border-radius: 8px;
+    }
+
+    code {
+      padding: 5px 8px;
+    }
+
+    pre {
+      padding: 20px;
+      text-align: left;
+    }
+
+    abbr {
+      color: #00695c;
+      font-weight: bold;
+      cursor: help;
+    }
+
+    blockquote {
+      margin: auto;
+      max-width: 600px;
+      padding: 18px;
+      border-left: 6px solid #ff9800;
+      background: #fff3e0;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 25px;
+      color: white;
+      text-align: center;
+      background: #263238;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <h1>🎢 Adventure Park Challenge</h1>
+    <p class="lead">Explore exciting rides, complete challenges, and learn about park safety!</p>
+  </header>
+
+  <main>
+    <section class="section-card">
+      <h2>Adventure Levels</h2>
+
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="level-card">
+            <h1 class="text-primary">Extreme Explorer</h1>
+            <p>For brave adventure experts.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="level-card">
+            <h2 class="text-success">Mountain Rider</h2>
+            <p>Enjoy challenging mountain rides.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="level-card">
+            <h3 class="text-danger">Trail Runner</h3>
+            <p>Complete exciting outdoor trails.</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="level-card">
+            <h4 class="text-warning">New Adventurer</h4>
+            <p>Start your adventure safely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Visitor Passes</h2>
+
+      <div >
+        <div class="col-md-4 mb-3">
+          <div class="pass-card">
+            <h3>👦 Aarav</h3>
+            <p>Pass: Extreme Explorer</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="pass-card">
+            <h3>👧 Mia</h3>
+            <p>Pass: Mountain Rider</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="pass-card">
+            <h3>👧 Zara</h3>
+            <p>Pass: Trail Runner</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Ride Dictionary</h2>
+
+      <dl>
+        <dt>🚀 Sky Coaster</dt>
+        <dd>A fast ride that takes visitors high above the park.</dd>
+
+        <dt>🗺️ Treasure Trail</dt>
+        <dd>A mystery path where visitors solve clues to find treasure.</dd>
+
+        <dt>🌊 River Rush</dt>
+        <dd>A water ride with exciting twists and turns.</dd>
+      </dl>
+    </section>
+
+    <section class="section-card">
+      <h2>Safety Mission</h2>
+      <p>Please report to <mark>Gate 3</mark> before the challenge begins.</p>
+      <p>The rescue drill will happen near <mark>River Zone</mark>.</p>
+    </section>
+
+    <section class="section-card">
+      <h2>Ride Commands</h2>
+      <p>Start the coaster: <code>ride.start("Sky Coaster")</code></p>
+      <p>Open the trail: <code>trail.open("Treasure Trail")</code></p>
+      <p>Stop the ride: <code>ride.stop("River Rush")</code></p>
+    </section>
+
+    
+    <section class="section-card">
+      <h2>Daily Challenge Schedule</h2>
+
+      <pre>10:00 AM - Gate Entry
+11:00 AM - Sky Coaster
+12:00 PM - Treasure Trail
+02:00 PM - River Rush
+03:00 PM - Final Adventure Badge</pre>
+    </section>
+
+   
+  </main>
+
+  <footer>
+    🌟 Have fun, stay safe, and enjoy your adventure!
+  </footer>
+</body>
+</html>
