@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildCare Zoo Tracker</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 70px;
+      font-family: Arial, sans-serif;
+      color: #173b2b;
+      background: #f3fbf5;
+    }
+
+    .alert {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 18px;
+      text-align: center;
+      color: white;
+      background: #176b4d;
+      font-weight: bold;
+    }
+
+    header {
+      padding: 45px 20px;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #176b4d, #52a675);
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 42px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-top: 38px;
+      color: #176b4d;
+      border-left: 6px solid #f4a261;
+      padding-left: 12px;
+    }
+
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .summary-box {
+      flex: 1;
+      min-width: 180px;
+      padding: 20px;
+      text-align: center;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px #173b2b20;
+    }
+
+    .summary-box strong {
+      display: block;
+      font-size: 30px;
+      color: #176b4d;
+    }
+
+    .animal-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .animal-card {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+      padding: 25px;
+      background: white;
+      border-radius: 18px;
+      border-top: 7px solid #52a675;
+      box-shadow: 0 5px 15px #173b2b22;
+      transition: transform 0.3s;
+    }
+
+    .animal-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .animal-icon {
+      font-size: 55px;
+    }
+
+    .animal-card h3 {
+      margin: 10px 0;
+      color: #176b4d;
+      font-size: 25px;
+    }
+
+    .animal-card p {
+      line-height: 1.6;
+    }
+
+    .badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 7px 12px;
+      border-radius: 20px;
+      color: white;
+      background: #2a9d8f;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .progress {
+      height: 12px;
+      margin: 12px 0;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #dcefe2;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      border-radius: 10px;
+      background: #f4a261;
+    }
+
+    .lion-progress {
+      width: 90%;
+    }
+
+    .turtle-progress {
+      width: 70%;
+    }
+
+    .elephant-progress {
+      width: 100%;
+    }
+
+    .details {
+      padding: 22px;
+      background: #e0f2e6;
+      border-radius: 15px;
+      line-height: 1.8;
+    }
+
+    .details strong {
+      color: #176b4d;
+    }
+
+    .zone {
+      position: sticky;
+      top: 70px;
+      z-index: 5;
+      margin-top: 35px;
+      padding: 15px;
+      color: white;
+      background: #264653;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .tips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 20px 0 40px;
+    }
+
+    .tip {
+      flex: 1;
+      min-width: 230px;
+      padding: 18px;
+      background: white;
+      border-left: 5px solid #f4a261;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px #173b2b18;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      color: white;
+      background: #173b2b;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      main {
+        width: 94%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="alert">🚨 Zoo Status: All care teams are currently active</div>
+
+  <header>
+    <h1>🌿 WildCare Zoo Tracker</h1>
+    <p>Simple updates about animal health, location, and daily care.</p>
+  </header>
+
+  <main>
+    <h2>Zoo Overview</h2>
+
+    <section class="summary">
+      <div class="summary-box">
+        <strong>3</strong>
+        Animals Tracked
+      </div>
+
+      <div class="summary-box">
+        <strong>2</strong>
+        Healthy
+      </div>
+
+      <div class="summary-box">
+        <strong>1</strong>
+        Recovering
+      </div>
+
+      <div class="summary-box">
+        <strong>100%</strong>
+        Team Active
+      </div>
+    </section>
+
+    <h2>Animal Tracking Information</h2>
+
+    <section class="animal-list">
+      <article class="animal-card">
+        <div class="badge">Healthy</div>
+        <div class="animal-icon">🦁</div>
+        <h3>Leo the Lion</h3>
+        <p><strong>Location:</strong> Savannah Habitat</p>
+        <p><strong>Last Check:</strong> Today, 9:00 AM</p>
+        <p><strong>Care Plan:</strong> Rest, fresh water, and a balanced meal.</p>
+        <p><strong>Health Progress:</strong></p>
+        <div class="progress">
+          <span class="lion-progress"></span>
+        </div>
+        <p>Leo is active and eating normally.</p>
+      </article>
+
+      <article class="animal-card">
+        <div class="badge">Recovering</div>
+        <div class="animal-icon">🐢</div>
+        <h3>Shellby the Turtle</h3>
+        <p><strong>Location:</strong> Reptile Care Center</p>
+        <p><strong>Last Check:</strong> Today, 10:30 AM</p>
+        <p><strong>Care Plan:</strong> Shell treatment and warm habitat lighting.</p>
+        <p><strong>Health Progress:</strong></p>
+        <div class="progress">
+          <span class="turtle-progress"></span>
+        </div>
+        <p>Shellby is improving and needs regular observation.</p>
+      </article>
+
+      <article class="animal-card">
+        <div class="badge">Excellent</div>
+        <div class="animal-icon">🐘</div>
+        <h3>Ella the Elephant</h3>
+        <p><strong>Location:</strong> Elephant Valley</p>
+        <p><strong>Last Check:</strong> Today, 8:15 AM</p>
+        <p><strong>Care Plan:</strong> Morning walk, clean water, and fruit.</p>
+        <p><strong>Health Progress:</strong></p>
+        <div class="progress">
+          <span class="elephant-progress"></span>
+        </div>
+        <p>Ella is healthy, energetic, and social.</p>
+      </article>
+    </section>
+
+    <div class="zone">📍 Current Focus: Reptile Care Center</div>
+
+    <h2>Today's Care Schedule</h2>
+
+    <div class="details">
+      <p>✅ <strong>8:00 AM:</strong> Health checks completed</p>
+      <p>✅ <strong>10:00 AM:</strong> Feeding and water refill</p>
+      <p>🕒 <strong>1:00 PM:</strong> Shellby’s treatment review</p>
+      <p>🕒 <strong>4:00 PM:</strong> Habitat cleaning</p>
+    </div>
+
+    
+</body>
+</html>
