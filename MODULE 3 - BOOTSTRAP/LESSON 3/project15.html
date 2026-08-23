@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nature Explorer</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #263b35;
+      font-family: Arial, sans-serif;
+      background: #eef8f1;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(#14532dcc, #14532dcc),
+        url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: #176b4d;
+      font-weight: bold;
+    }
+
+    h3 {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    h4 {
+      color: #00796b;
+      font-weight: bold;
+    }
+
+    h5 {
+      color: #795548;
+      font-weight: bold;
+    }
+
+    main {
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 0;
+    }
+
+    .section-card {
+      margin: 25px 0;
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px #263b3525;
+    }
+
+    .section-card > h2 {
+      text-align: center;
+    }
+
+    .info-box {
+      height: 100%;
+      padding: 22px;
+      text-align: center;
+      background: #dff3e5;
+      border-radius: 15px;
+    }
+
+    .info-box strong {
+      display: block;
+      color: #176b4d;
+      font-size: 28px;
+    }
+
+    .zone-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .zone-card {
+      position: relative;
+      min-height: 270px;
+      flex: 1 1 230px;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      padding: 22px;
+      color: white;
+      border-radius: 18px;
+      background-position: center;
+      background-size: cover;
+      box-shadow: 0 7px 16px #263b3550;
+      transition: transform 0.3s;
+    }
+
+    .zone-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .zone-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 25%, #000d);
+    }
+
+    .zone-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .zone-content h3,
+    .zone-content h4,
+    .zone-content h5 {
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .forest {
+      background-image: url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=85");
+    }
+
+    .river {
+      background-image: url("https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=85");
+    }
+
+    .mountain {
+      background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=85");
+    }
+
+    .wildlife {
+      background-image: url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=85");
+    }
+
+    .schedule {
+      padding: 20px;
+      border-left: 6px solid #f4a261;
+      background: #fff3e0;
+      border-radius: 12px;
+      line-height: 2;
+    }
+
+    .rules {
+      padding: 20px;
+      background: #e0f2f1;
+      border-radius: 12px;
+      line-height: 2;
+    }
+
+    blockquote {
+      margin: 25px auto 0;
+      max-width: 650px;
+      padding: 20px;
+      border-left: 6px solid #f4a261;
+      background: #fff8e1;
+      font-style: italic;
+    }
+
+    footer {
+      padding: 25px;
+      color: white;
+      text-align: center;
+      background: #263b35;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .section-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <h1>🌿 Nature Explorer</h1>
+    <p class="lead">
+      Discover forests, rivers, mountains, and wildlife.
+    </p>
+  </header>
+
+  <main>
+    <section class="section-card">
+      <h2>Explorer Overview</h2>
+
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="info-box">
+            <strong>4</strong>
+            Nature Zones
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="info-box">
+            <strong>24°C</strong>
+            Temperature
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="info-box">
+            <strong>Good</strong>
+            Air Quality
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <div class="info-box">
+            <strong>Open</strong>
+            Explorer Center
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Explore Nature Zones</h2>
+      <p class="text-center">Choose a zone and learn about its environment.</p>
+
+      <div class="zone-grid">
+        <div class="zone-card forest">
+          <div class="zone-content">
+            <h3>🌲 Forest Explorer</h3>
+            <p>Discover trees, plants, birds, and peaceful walking trails.</p>
+          </div>
+        </div>
+
+        <div class="zone-card river">
+          <div class="zone-content">
+            <h4>🌊 River Journey</h4>
+            <p>Learn why clean water is important for people and animals.</p>
+          </div>
+        </div>
+
+        <div class="zone-card mountain">
+          <div class="zone-content">
+            <h5>⛰️ Mountain View</h5>
+            <p>Explore high places, cool weather, and mountain habitats.</p>
+          </div>
+        </div>
+
+        <div class="zone-card wildlife">
+          <div class="zone-content">
+            <h3>🦁 Wildlife Zone</h3>
+            <p>Observe animals safely and understand how to protect them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ 
+
+    <section class="section-card">
+      <h2>Nature Safety Rules</h2>
+
+      <div class="rules">
+        ✅ Stay on marked paths.<br>
+        ✅ Never feed or disturb animals.<br>
+        ✅ Keep rivers and forests clean.<br>
+        ✅ Do not pick flowers or damage plants.<br>
+        ✅ Follow the instructions of nature guides.
+      </div>
+
+      <blockquote>
+        “The best way to protect nature is to understand and respect it.”
+      </blockquote>
+    </section>
+  </main>
+
+  <footer>
+    🌍 Explore responsibly and help protect our beautiful planet.
+  </footer>
+</body>
+</html>
