@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="exam"></p>
+    <button onclick="sum(100, 300)">Add to No.s</button>
+    <button onclick="hide()">Hide the Button</button>
+    <button onclick="changeColor('red')">Change The Color</button>
+    <div id="result"></div>
+
+    <script>
+      // THIS IS A FUNCTION DEFINITION & MUST BE CALLED.
+      function showName() {
+        let name = "Shivam";
+        document.getElementById("exam").innerHTML = name;
+      }
+      // THIS IS A FUNCTION CALLER.
+      showName();
+
+      //WE ARE GOING TO ACCEPT AGRUMENT OR PARAMETERS FFOR THIS FUNCTION.
+      function intro(name, food) {
+        document.getElementById("exam").innerHTML +=
+          `My name is ${name} & I like to eat ${food}.<br>`;
+      }
+      // PASSING THE ARGUMENT VALUES WHEN WE CALL THE FUNCTION
+      intro("Shivam", "French Fries");
+
+      intro("Aizen", "Vegetables");
+
+      intro("Goku", "Fruits");
+
+      //____________________________________________________________________________________________________________//
+
+      function sum(a, b) {
+        document.getElementById("result").innerHTML = a + b;
+      }
+
+      function hide() {
+        document.getElementById("result").innerHTML = "";
+      }
+
+      function changeColor(colorName) {
+        document.getElementById("result").style.color = colorName;
+      }
+    </script>
+  </body>
+</html>
