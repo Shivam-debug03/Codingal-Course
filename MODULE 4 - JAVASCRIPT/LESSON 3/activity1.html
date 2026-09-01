@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="list"></p>
+    <script>
+      // Method is a type of function
+
+      let sentence = "The Quick Fox Jumped Over The Lazy Dog.";
+      document.write(sentence.toUpperCase()); // Sting Method
+      document.write("<br>");
+
+      document.write(sentence.toLowerCase());
+      document.write("<br>");
+
+      document.write(sentence.startsWith("The"));
+      document.write("<br>");
+
+      document.write(sentence.includes("Quick Fox"));
+      document.write("<br><br><hr>");
+
+      //-------------------------------------------------------------------------------------------------------------------------------------------------------//
+      // Array or Lists - collection of values
+      let products = [
+        "Samsung Galaxy 26",
+        "Samsung Galaxy 25",
+        "Play Station 5 Pro",
+      ];
+
+      document.write("How big is my products array? " + products.length);
+      document.write("<br>");
+
+      for (let i = 0; i < products.length; i++) {
+        document.write(products[i]);
+        document.write("<br><br><hr>");
+      }
+
+      //---------------------------------------------------------------------------------------------------------------------------------------------------------//
+      let day = new Date().getDay();
+      console.log(day);
+
+      // 0 , 1 , 2 , 3 , 4 , 5 , 6
+
+      switch (day) {
+        case 0:
+          console.log("Sunday");
+          break;
+
+        case 0:
+          console.log("Sunday");
+          break;
+
+        case 1:
+          console.log("Monday");
+          break;
+
+        case 2:
+          console.log("Tuesday");
+          break;
+
+        case 3:
+          console.log("Wednesday");
+          break;
+
+        case 4:
+          console.log("Thursday");
+          break;
+
+        case 5:
+          console.log("Friday");
+          break;
+
+        case 6:
+          console.log("Saturday");
+          break;
+      }
+
+      console.log(new Date().getFullYear());
+      
+    </script>
+  </body>
+</html>
