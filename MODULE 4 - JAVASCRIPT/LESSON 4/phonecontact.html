@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Phone Contact</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f0f0f2;
+      }
+      h1 {
+        color: #ff5a43;
+      }
+      .card-label {
+        font-size: 11px;
+        color: #999;
+        text-transform: uppercase;
+      }
+      pre {
+        font-size: 13px;
+        color: #333;
+      }
+      .card {
+        max-width: 400px;
+      }
+      .card-title,
+      h6 {
+        color: #ff5a43;
+      }
+    </style>
+  </head>
+  <body class="py-4">
+    <div class="container">
+      <h1 class="mb-1">My Phone Contact</h1>
+      <p class="text-muted mb-4">Introduction to Objects in JavaScript</p>
+
+      <!-- Contact Card -->
+      <div class="card shadow-sm mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Contact Details</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="card-label">name</div>
+              <strong id="name"></strong>
+            </li>
+            <li class="list-group-item">
+              <div class="card-label">phone</div>
+              <strong id="phone"></strong>
+            </li>
+            <li class="list-group-item">
+              <div class="card-label">city</div>
+              <strong id="city"></strong>
+            </li>
+            <li class="list-group-item">
+              <div class="card-label">superpower</div>
+              <strong id="superpower"></strong>
+            </li>
+            <li class="list-group-item">
+              <div class="card-label">lastname</div>
+              <strong id="lastname"></strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Code Box -->
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h6>JavaScript Object Used</h6>
+          <pre id="objectDisplay" class="bg-light p-3 rounded border"></pre>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let contact = {
+        name: "Naruto",
+        phone: "9876543210",
+        city: "Tokyo",
+        lastname: "Uzumaki",
+        superpower: "Sage Mode/Rasengan/Kurama",
+      };
+
+      console.log(typeof contact);
+      document.getElementById("name").innerHTML = contact.name;
+      document.getElementById("phone").innerHTML = contact.phone;
+      document.getElementById("city").innerHTML = contact["city"];
+      document.getElementById("lastname").innerHTML = contact["lastname"];
+      document.getElementById("superpower").innerHTML = contact["superpower"];
+
+      console.log(contact);
+      // JAVASCRIPT OBJECT NOTATION.
+      document.getElementById("objectDisplay").innerHTML = JSON.stringify(contact);
+    </script>
+  </body>
+</html>
