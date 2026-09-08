@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getRandomEmoji()">Generate Random Emoji</button>
+    <p id="PressMe" style="font-size: 5rem;"></p>
+    <p id="joined-array"></p>
+    <p id="pop-1"></p>
+    <p id="pop-2"></p>
+
+    <script>
+      let fruits = ["Mango", "Watermelon", "Apple", "Kiwi"];
+
+      document.getElementById("joined-array").innerHTML = fruits.join("🍓");
+
+      fruits.pop();
+
+      document.getElementById("pop-1").innerHTML = fruits.join(" | ");
+
+      fruits.pop();
+
+      document.getElementById("pop-1").innerHTML = fruits.join(" | ");
+
+      let emojis = ["😀", "😍", "🥶", "🥵", "😵"];
+
+      function getRandomEmoji() {
+        let randomNumber = Math.floor(Math.random() * emojis.length);
+        document.getElementById("PressMe").innerHTML = emojis[randomNumber];
+      }
+    </script>
+  </body>
+</html>
