@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Methods and Loops</title>
+  </head>
+  <body>
+    <h2>Methods and Loops</h2>
+
+    <p><strong>Loop Example:</strong> Numbers from 1 to 10</p>
+    <p id="numbers"></p>
+
+    <p><strong>String Method Example:</strong></p>
+    <p id="message"></p>
+
+    <script>
+      
+      var numberList = "";
+      for (var i = 1; i <= 10; i++) {
+        numberList += i + "<br>";
+      }
+      document.getElementById("numbers").innerHTML = numberList;
+
+      
+      var text = "hello world";
+      var upperText = text.toUpperCase();
+
+      document.getElementById("message").innerHTML =
+        "Original text: " + text + "<br>After toUpperCase(): " + upperText;
+    </script>
+  </body>
+</html>
