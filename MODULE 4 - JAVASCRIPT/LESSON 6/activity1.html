@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Module 4 - Lesson 6 - Activity 1 - My Zoo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: aliceblue;
+        text-align: center;
+        padding: 30px;
+      }
+
+      h1 {
+        color: #ff5a43;
+      }
+
+      #zoo {
+        border: 2px solid #ff5a43;
+        width: 300px;
+        margin: 16px auto;
+        padding: 12px;
+        border-radius: 10px;
+        background: white;
+      }
+
+      .zone {
+        border: 1px solid #ff5a43;
+        margin: 6px 0;
+        padding: 8px 12px;
+        border-radius: 6px;
+        text-align: left;
+        transition: all 0.3s ease-in;
+      }
+
+      button {
+        background: #ff5a43;
+        color: white;
+        padding: 10px 24px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Zoo</h1>
+    <p>Use JavaScript and the DOM to add animals to each cage!</p>
+
+    <!--
+    DOM Tree: zoo is the parent element node.
+    Zone divs are child element nodes. Animal names inside each span are text nodes.
+  -->
+    <div id="zoo">
+      <div class="zone">
+        Zone 1:
+        <span id="zone1"></span>
+      </div>
+
+      <div class="zone">
+        Zone 2:
+        <span id="zone2"></span>
+      </div>
+
+      <div class="zone">
+        Zone 3:
+        <span id="zone3"></span>
+      </div>
+
+      <div class="zone">
+        Total Animals:
+        <span id="total"></span>
+      </div>
+    </div>
+
+    <br />
+
+    <button onclick="openZoo()">Open the Zoo!</button>
+
+    <p id="zoo-status"></p>
+
+    <script>
+      function getRandomColor() {
+        let red = Math.floor(Math.random() * 255);
+        let green = Math.floor(Math.random() * 255);
+        let blue = Math.floor(Math.random() * 255);
+        let randomColor = `rgb(${red}, ${green},${blue})`;
+        return randomColor;
+      }
+
+      function openZoo() {
+        document.getElementById("zone1").innerHTML = "Cheetah";
+        document.querySelector("#zone2").innerHTML = "Dodo";
+        document.querySelector("#zone3").innerHTML = "Saber-Toothed Tiger";
+        document.querySelector("#total").innerHTML = "3";
+        let zones = document.querySelectorAll(".zone");
+
+        for (let element of zones) {
+          element.style.transform = "rotate(20deg)";
+          element.style.backgroundColor = getRandomColor();
+        }
+
+        // Generate a random color
+
+        document.getElementById("zoo").style.backgroundColor = getRandomColor();
+      }
+    </script>
+  </body>
+</html>
