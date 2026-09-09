@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+    <p>Perform all Operations using JavaScript</p>
+    <p id="add"></p>
+    <p id="sub"></p>
+    <p id="mul"></p>
+    <p id="div"></p>
+
+    <script>
+      // Use clear names so the code is easy to understand
+      var firstNumber = 18;
+      var secondNumber = 6;
+
+      var sum = firstNumber + secondNumber;
+      var difference = firstNumber - secondNumber;
+      var product = firstNumber * secondNumber;
+      var quotient = firstNumber / secondNumber;
+
+      document.getElementById("add").innerHTML =
+        "Addition: " + firstNumber + " + " + secondNumber + " = " + sum;
+
+      document.getElementById("sub").innerHTML =
+        "Subtraction: " +
+        firstNumber +
+        " - " +
+        secondNumber +
+        " = " +
+        difference;
+
+      document.getElementById("mul").innerHTML =
+        "Multiplication: " +
+        firstNumber +
+        " x " +
+        secondNumber +
+        " = " +
+        product;
+
+      document.getElementById("div").innerHTML =
+        "Division: " + firstNumber + " / " + secondNumber + " = " + quotient;
+    </script>
+  </body>
+</html>
