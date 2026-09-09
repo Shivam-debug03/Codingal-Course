@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplication Using Function</title>
+  </head>
+  <body>
+    <h2>Multiplication Using Function</h2>
+
+    <button onclick="showProduct()">Click Me!</button>
+    <p id="result"></p>
+
+    <script>
+      function multiply(a, b) {
+        return a * b;
+      }
+
+      function showProduct() {
+        var num1 = 4;
+        var num2 = 5;
+        var product = multiply(num1, num2);
+        document.getElementById("result").innerHTML =
+          "The product of " + num1 + " and " + num2 + " is " + product;
+      }
+    </script>
+  </body>
+</html>
