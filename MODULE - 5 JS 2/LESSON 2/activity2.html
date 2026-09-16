@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Module 5 - Lesson 2 - Activity 1 - My Planet Cards</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial;
+        background: #f0f4ff;
+        padding: 30px;
+        text-align: center;
+      }
+      h1 {
+        color: #0ea75b;
+      }
+      p {
+        color: #555;
+      }
+      .planet-name {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+      }
+      .planet-fact {
+        color: #666;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      button {
+        background: #0ea75b;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌏 My Footballer Cards</h1>
+    <p>Use a JavaScript class to build Footballer cards!</p>
+    <button onclick="showFootballers()">Show Footballers!</button>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-4">
+          <div id="card1"></div>
+        </div>
+        <div class="col-4">
+          <div id="card2"></div>
+        </div>
+        <div class="col-4">
+          <div id="card3"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      class FootballPlayer {
+        // a constructor is called immediately when you create an object
+        constructor(name, nationality, strongFoot, club, positon, jerseyNo) {
+          this.name = name;
+          this.nationality = nationality;
+          this.club = club;
+          this.strongFoot = strongFoot;
+          this.positon = positon;
+          this.jerseyNo = jerseyNo;
+        }
+        createCard() {
+          return
+            `<div class="card shadow p-2 border-success border-3">
+            <div class = "card-body">
+            <div class="player-name">${this.name}</div>
+            <div class = "player-fact">
+                    <p><strong>:</strong> ${this.nationality}</p>
+                    <p><strong>:</strong> ${this.strongFoot}</p>
+                    <p><strong>:</strong> ${this.club}</p>
+                    <p><strong>:</strong> ${this.positon}</p>
+                    <p><strong>:</strong> ${this.jerseyNo}</p>
+                    </div>
+                    </div>                    
+        </div>`;
+        }
+      }
+
+      function showFootballers() {
+        //These are object of the footballer class
+        let player3 = new FootballPlayer(
+          "Ronaldo Nazario",
+          "Brazil",
+          "Right Footed",
+          "Real Madrid",
+          "Striker",
+          "09",
+        );
+        let player2 = new FootballPlayer(
+          "Cristanio Ronaldo",
+          "Portugal",
+          "Right Footed",
+          "Juventus/Real Madrid",
+          "Left Winger",
+          "17",
+        );
+        let player1 = new FootballPlayer(
+          "Lionel Messi",
+          "Argentina",
+          "Left Footed",
+          "Barcelona",
+          "Right Winger",
+          "19",
+        );
+
+        document.getElementById("card1").innerHTML = player1.createCard();
+        document.getElementById("card2").innerHTML = player2.createCard();
+        document.getElementById("card3").innerHTML = player3.createCard();
+      }
+    </script>
+  </body>
+</html>
