@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Countdown Checker</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #fff4d6, #ffd6e8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .card {
+        width: 540px;
+        background: #ffffff;
+        border-radius: 22px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        padding: 30px 25px;
+        text-align: center;
+      }
+
+      .emoji {
+        font-size: 58px;
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        color: #d63384;
+        margin: 0 0 10px;
+        font-size: 32px;
+      }
+
+      .subtitle {
+        color: #555;
+        margin-bottom: 22px;
+      }
+
+      button {
+        background: linear-gradient(135deg, #ff4d8d, #d63384);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 22px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(214, 51, 132, 0.25);
+      }
+
+      .days-box {
+        margin: 22px 0 18px;
+        font-size: 28px;
+        font-weight: bold;
+        color: #5d2ea3;
+      }
+
+      .box {
+        background: #fff5fa;
+        border: 2px dashed #f5a1c7;
+        border-radius: 16px;
+        padding: 18px;
+        text-align: left;
+        margin-top: 18px;
+      }
+
+      .box h3 {
+        margin-top: 0;
+        color: #b42375;
+      }
+
+      .result {
+        line-height: 1.8;
+        color: #333;
+      }
+
+      #countdown {
+        line-height: 1.8;
+        color: #333;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="emoji">🎂</div>
+      <h1>Birthday Countdown</h1>
+
+      <p class="subtitle">
+        Click the button to see the birthday countdown and a random birthday
+        gift and plan.
+      </p>
+
+      <button onclick="checkBirthday()">Check Birthday</button>
+
+      <div class="days-box">Days left: <span id="daysBox">?</span></div>
+
+      <div class="box">
+        <h3>Birthday Result</h3>
+        <div id="result" class="result"></div>
+      </div>
+
+      <div class="box">
+        <h3>Countdown Review</h3>
+        <div id="countdown"></div>
+      </div>
+    </div>
+
+    <script>
+      function checkBirthday() {
+        const studentName = "Shivam Vagehla";
+        const birthdayMonth = 7;
+        const birthdayDate = 1;
+
+        const randomGifts = [
+          "Gaming headset",
+          "Bluetooth speaker",
+          "Sports shoes",
+          "Drone",
+          "Basketball",
+          "Smartwatch",
+          "Gift voucher",
+          "New jersey",
+          "Phone stand",
+          "Books",
+        ];
+
+        const birthdayPlans = [
+          "Movie night with friends",
+          "Pizza party",
+          "Gaming marathon",
+          "Outdoor picnic",
+          "Birthday dinner",
+          "Bike ride hangout",
+          "Pool party",
+          "Beach trip",
+          "Late-night dessert outing",
+          "Theme park day",
+        ];
+
+        const randomGift =
+          randomGifts[Math.floor(Math.random() * randomGifts.length)];
+        const randomPlan =
+          birthdayPlans[Math.floor(Math.random() * birthdayPlans.length)];
+
+        let today = new Date();
+        let currentYear = today.getFullYear();
+
+        let birthday = new Date(currentYear, birthdayMonth - 1, birthdayDate);
+
+        if (birthday < today) {
+          birthday = new Date(currentYear + 1, birthdayMonth - 1, birthdayDate);
+        }
+
+        let timeDifference = birthday - today;
+        let daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+        let message = "";
+        if (daysLeft === 0) {
+          message =
+            "Happy Birthday, " + studentName + "! Today is your special day!";
+        } else if (daysLeft <= 7) {
+          message =
+            "Your birthday is almost here, " + studentName + "! Get ready!";
+        } else {
+          message =
+            "Keep counting, " + studentName + "! Your birthday is coming soon.";
+        }
+
+        document.getElementById("daysBox").innerHTML = daysLeft;
+
+        document.getElementById("result").innerHTML =
+          "Student Name: " +
+          studentName +
+          "<br>" +
+          "Birthday Date: " +
+          birthday.toDateString() +
+          "<br>" +
+          "Random Gift: " +
+          randomGift +
+          "<br>" +
+          "Birthday Plan: " +
+          randomPlan +
+          "<br>" +
+          "Message: " +
+          message;
+
+        let countdownText = "";
+        for (let i = 1; i <= 5; i++) {
+          countdownText +=
+            "Countdown check " + i + ": Birthday excitement is building...<br>";
+        }
+
+        document.getElementById("countdown").innerHTML = countdownText;
+      }
+    </script>
+  </body>
+</html>
