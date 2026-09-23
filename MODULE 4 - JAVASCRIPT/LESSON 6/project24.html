@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Digital Zoo Manager</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #f4f9ff;
+      }
+
+      #zoo {
+        width: 420px;
+        margin: 20px auto;
+        padding: 15px;
+        border: 3px solid darkgreen;
+        border-radius: 12px;
+        background: white;
+      }
+
+      .zone {
+        margin: 10px 0;
+        padding: 12px;
+        border: 2px solid green;
+        border-radius: 8px;
+        transition: all 1.5s ease;
+      }
+
+      button {
+        background: darkgreen;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      #output {
+        width: 420px;
+        margin: 20px auto;
+        padding: 10px;
+        border: 2px dashed green;
+        background: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>My Digital Zoo Manager</h1>
+
+    <div id="zoo">
+      <div class="zone" id="tigerZone">
+        <h2>Tiger Zone</h2>
+      </div>
+
+      <div class="zone" id="giraffeZone">
+        <h2>Giraffe Zone</h2>
+      </div>
+
+      <div class="zone" id="zebraZone">
+        <h2>Zebra Zone</h2>
+      </div>
+    </div>
+
+    <button onclick="manageZoo()">Manage Zoo</button>
+
+    <div id="output">Zoo will update here.</div>
+
+    <script>
+      function randomColor() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+      }
+
+      function randomTransform() {
+        const x = Math.floor(Math.random() * 41) - 20;
+        const y = Math.floor(Math.random() * 41) - 20;
+        const degree = Math.floor(Math.random() * 181) - 90;
+
+        return "translate(" + x + "px, " + y + "px) rotate(" + degree + "deg)";
+      }
+
+      function manageZoo() {
+        const zones = [
+          document.getElementById("tigerZone"),
+          document.getElementById("giraffeZone"),
+          document.getElementById("zebraZone"),
+        ];
+
+        zones.forEach((zone) => {
+          zone.style.backgroundColor = randomColor();
+          zone.style.transform = randomTransform();
+        });
+
+        document.getElementById("output").innerHTML =
+          "The zoo colors and positions changed randomly!";
+      }
+    </script>
+  </body>
+</html>
