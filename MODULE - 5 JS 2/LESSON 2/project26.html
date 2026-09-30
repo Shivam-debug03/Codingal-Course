@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Module 5 - Lesson 2 - Activity 1 - My Anime Character Cards</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial;
+        background: #f0f4ff;
+        padding: 30px;
+        text-align: center;
+      }
+      h1 {
+        color: #0ea75b;
+      }
+      p {
+        color: #555;
+      }
+      .character-name {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+      }
+      .character-fact {
+        color: #666;
+        margin-top: 10px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+      }
+      .card {
+        width: 100%;
+        min-height: 420px;
+        height: 420px;
+        display: flex;
+        flex-direction: column;
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      button {
+        background: #0ea75b;
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🌏 My Anime Character Cards</h1>
+    <p>Use a JavaScript class to build anime character cards!</p>
+    <button onclick="showAnimeCharacters()">Show Characters!</button>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-4">
+          <div id="card1"></div>
+        </div>
+        <div class="col-4">
+          <div id="card2"></div>
+        </div>
+        <div class="col-4">
+          <div id="card3"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      class AnimeCharacter {
+        constructor(
+          name,
+          origin,
+          specialAbility,
+          affiliation,
+          role,
+          signatureMove,
+        ) {
+          this.name = name;
+          this.origin = origin;
+          this.specialAbility = specialAbility;
+          this.affiliation = affiliation;
+          this.role = role;
+          this.signatureMove = signatureMove;
+        }
+
+        createCard() {
+          return `
+            <div class="card shadow p-2 border-success border-3">
+              <div class="card-body">
+                <div class="character-name">${this.name}</div>
+                <div class="character-fact">
+                  <p><strong>Origin:</strong> ${this.origin}</p>
+                  <p><strong>Special Ability:</strong> ${this.specialAbility}</p>
+                  <p><strong>Affiliation:</strong> ${this.affiliation}</p>
+                  <p><strong>Role:</strong> ${this.role}</p>
+                  <p><strong>Signature Move:</strong> ${this.signatureMove}</p>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      function showAnimeCharacters() {
+        let character1 = new AnimeCharacter(
+          "Sosuke Aizen",
+          "Bleach",
+          "Kyoka Suigetsu",
+          "Gotei 13 / Arrancar",
+          "Villain / Captain",
+          "Kurohitsugi",
+        );
+
+        let character2 = new AnimeCharacter(
+          "Son Goku",
+          "Dragon Ball",
+          "Super Saiyan Transformations",
+          "Earth / Z Fighters",
+          "Hero / Saiyan",
+          "Kamehameha",
+        );
+
+        let character3 = new AnimeCharacter(
+          "Kisuke Urahara",
+          "Bleach",
+          "Shikai / Henshin",
+          "Soul Society / Karakura Town",
+          "Former Captain / Shopkeeper",
+          "Benihime",
+        );
+
+        document.getElementById("card1").innerHTML = character1.createCard();
+        document.getElementById("card2").innerHTML = character2.createCard();
+        document.getElementById("card3").innerHTML = character3.createCard();
+      }
+    </script>
+  </body>
+</html>
