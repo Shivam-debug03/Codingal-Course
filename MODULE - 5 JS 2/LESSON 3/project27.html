@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Daily Task Organizer</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <style>
+      body {
+        background: #f4f1ff;
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: darkviolet;
+        text-align: center;
+      }
+
+      .task-box {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        color: darkviolet;
+        margin-top: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn {
+        background: darkviolet;
+        border: none;
+        margin-right: 10px;
+      }
+
+      .btn:hover {
+        background: #6a0dad;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container py-4">
+      <h1>Daily Task Organizer</h1>
+
+      <div class="card">
+        <div class="card-body">
+          <button class="btn btn-primary" onclick="sortTasks()">
+            Sort Tasks A to Z
+          </button>
+          <button class="btn btn-primary" onclick="sortMinutes()">
+            Sort by Time
+          </button>
+          <button class="btn btn-primary" onclick="showLabels()">
+            Add Labels
+          </button>
+
+          <div id="taskResult" class="task-box"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let tasks = [
+        "Homework",
+        "Breakfast",
+        "Exercise",
+        "Reading",
+        "Packing Bag",
+        "Anime Watching",
+        "Manga Reading",
+      ];
+
+      let minutes = [30, 15, 20, 25, 10, 45, 35];
+
+      function showTasks() {
+        document.getElementById("taskResult").innerHTML =
+          "<strong>Tasks:</strong> " +
+          tasks.join(", ") +
+          "<br>" +
+          "<strong>Minutes:</strong> " +
+          minutes.join(", ");
+      }
+
+      function sortTasks() {
+        tasks.sort();
+        showTasks();
+      }
+
+      function sortMinutes() {
+        let sorted = minutes.slice().sort(function (a, b) {
+          return a - b;
+        });
+        document.getElementById("taskResult").innerHTML =
+          "<strong>Sorted by Time:</strong> " + sorted.join(", ");
+      }
+
+      function showLabels() {
+        let labels = minutes.map(function (time) {
+          return time + " minutes";
+        });
+        document.getElementById("taskResult").innerHTML =
+          "<strong>Task Labels:</strong> " + labels.join(", ");
+      }
+
+      showTasks();
+    </script>
+  </body>
+</html>
