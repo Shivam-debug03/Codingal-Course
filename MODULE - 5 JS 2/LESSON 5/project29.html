@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>School Event</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f8ff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .card {
+      width: 500px;
+      margin: 20px auto;
+      background: white;
+      border: 2px solid #3b82f6;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 0 10px #cfe1ff;
+    }
+
+    h1 {
+      color: #1d4ed8;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .box {
+      background: #eef6ff;
+      border: 2px dashed #93c5fd;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    #status {
+      color: #15803d;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>School Event</h1>
+    <p>Click the button to see a new school event.</p>
+    <button onclick="showSchoolEvent()">Next Event</button>
+
+    <div class="box">
+      <h2>Status</h2>
+      <p id="status">Waiting...</p>
+    </div>
+
+    <div class="box">
+      <h2>Event Details</h2>
+      <p id="eventDetails"></p>
+    </div>
+
+    <div class="box">
+      <h2>JSON</h2>
+      <p id="jsonOutput"></p>
+    </div>
+  </div>
+
+  <script>
+    const schoolEvents = [
+      {
+        eventName: "Science Fair",
+        date: "25 August 2026",
+        time: "10:00 AM",
+        venue: "School Hall",
+        coordinator: "Ms. Priya",
+        participants: 120,
+        registration: "Open"
+      },
+      {
+        eventName: "Sports Day",
+        date: "12 September 2026",
+        time: "9:00 AM",
+        venue: "School Ground",
+        coordinator: "Mr. Arjun",
+        participants: 200,
+        registration: "Open"
+      },
+      {
+        eventName: "Art Exhibition",
+        date: "30 October 2026",
+        time: "1:00 PM",
+        venue: "Library Room",
+        coordinator: "Ms. Neha",
+        participants: 80,
+        registration: "Closed"
+      }
+    ];
+
+    let eventIndex = 0;
+
+    function showSchoolEvent() {
+      const event = schoolEvents[eventIndex];
+
+      document.getElementById("status").textContent = "Event loaded";
+
+      document.getElementById("eventDetails").innerHTML =
+        "Event Name: " + event.eventName + "<br>" +
+        "Date: " + event.date + "<br>" +
+        "Time: " + event.time + "<br>" +
+        "Venue: " + event.venue + "<br>" +
+        "Coordinator: " + event.coordinator + "<br>" +
+        "Participants: " + event.participants + "<br>" +
+        "Registration: " + event.registration;
+
+      document.getElementById("jsonOutput").textContent = JSON.stringify(event);
+
+      eventIndex = (eventIndex + 1) % schoolEvents.length;
+    }
+  </script>
+</body>
+</html>
