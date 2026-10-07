@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Data Studio</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    body { background: #eaf4ff; }
+    h1, h3 { color: #1f4e79; }
+    .box { background: #f8fbff; color: #1f4e79; }
+  </style>
+</head>
+
+<body>
+<div class="container py-4">
+
+  <h1 class="mb-1">Smart Data Studio</h1>
+  <p class="text-muted mb-4">Check data types, change values, replace text, and handle errors with confidence.</p>
+
+  <!-- TOPIC 1: typeof -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h3 class="card-title">What Kind of Data?</h3>
+      <button class="btn btn-primary" onclick="checkTypes()">Check Data Types</button>
+      <div id="typeResult" class="box p-3 mt-3 rounded">Press the button to inspect the data types.</div>
+    </div>
+  </div>
+
+  <!-- TOPIC 2: Type Conversion -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h3 class="card-title">Convert Information</h3>
+      <button class="btn btn-primary" onclick="convertTypes()">Convert Values</button>
+      <div id="convertResult" class="box p-3 mt-3 rounded">Press the button to convert the values.</div>
+    </div>
+  </div>
+
+  <!-- TOPIC 3: Search and Replace -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h3 class="card-title">Update My Sentence</h3>
+      <p>Sentence: I love coding because coding helps me create ideas.</p>
+      <button class="btn btn-primary" onclick="replaceText()">Replace Word</button>
+      <div id="replaceResult" class="box p-3 mt-3 rounded">Press the button to update a word.</div>
+    </div>
+  </div>
+
+  <!-- TOPIC 4: try/catch -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h3 class="card-title">Error Guard</h3>
+      <button class="btn btn-primary" onclick="catchError()">Test the Guard</button>
+      <div id="errorResult" class="box p-3 mt-3 rounded">Press the button to test the error guard.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function checkTypes() {
+    var name = "Aarav";
+    var score = 98;
+    var isReady = false;
+
+    document.getElementById("typeResult").innerHTML =
+      "Name: " + typeof name + "<br>" +
+      "Score: " + typeof score + "<br>" +
+      "Ready: " + typeof isReady;
+  }
+
+  function convertTypes() {
+    var marksText = "72";
+    var marksNumber = Number(marksText);
+    var age = 16;
+    var ageText = String(age);
+
+    document.getElementById("convertResult").innerHTML =
+      '"72" as a number: ' + marksNumber + "<br>" +
+      "Type: " + typeof marksNumber + "<br><br>" +
+      "16 as text: " + ageText + "<br>" +
+      "Type: " + typeof ageText;
+  }
+
+  function replaceText() {
+    var sentence = "I love coding because coding helps me create ideas.";
+    var newSentence = sentence.replace("coding", "designing");
+
+    document.getElementById("replaceResult").innerHTML =
+      "Original: " + sentence + "<br><br>" +
+      "Updated: " + newSentence;
+  }
+
+  function catchError() {
+    try {
+      var result = totalPoints + 15;
+      document.getElementById("errorResult").innerHTML = "Result: " + result;
+    }
+    catch(error) {
+      document.getElementById("errorResult").innerHTML =
+        "A problem was caught: " + error.message;
+    }
+  }
+</script>
+
+</body>
+</html>
