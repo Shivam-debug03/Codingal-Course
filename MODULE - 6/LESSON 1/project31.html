@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MyBank</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f3f6f4;
+      color: #203229;
+      font-family: Arial, sans-serif;
+    }
+
+    header, footer {
+      padding: 18px 8%;
+      background: white;
+    }
+
+    header { border-bottom: 1px solid #e1e8e3; }
+    header h1 { margin: 0; color: #176b4a; }
+
+    main {
+      width: 90%;
+      max-width: 600px;
+      min-height: calc(100vh - 130px);
+      margin: 35px auto;
+    }
+
+    .card {
+      margin-bottom: 18px;
+      padding: 22px;
+      border: 1px solid #e1e8e3;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .balance-card { background: #176b4a; color: white; }
+    .balance-card p { margin: 0 0 10px; }
+    #balance { font-size: 36px; font-weight: bold; }
+
+    label { display: block; margin-bottom: 7px; }
+
+    input {
+      width: 100%;
+      padding: 11px;
+      border: 1px solid #ccd7cf;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    .buttons { display: flex; gap: 10px; margin-top: 12px; }
+
+    button {
+      flex: 1;
+      padding: 11px;
+      border: 0;
+      border-radius: 7px;
+      background: #176b4a;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #10583d; }
+    #message { min-height: 18px; margin-top: 12px; }
+    .error { color: #b42318; }
+    #transactions { padding: 0; list-style: none; }
+    #transactions li { padding: 11px 0; border-top: 1px solid #edf0ed; }
+    footer { color: #68766e; text-align: center; }
+
+    @media (max-width: 420px) {
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MyBank</h1>
+  </header>
+
+  <main>
+    <h2>Welcome, Heera</h2>
+
+    <section class="card balance-card">
+      <p>Account balance</p>
+      <p id="balance">₹1,000.00</p>
+    </section>
+
+    <section class="card">
+      <label for="amount">Enter amount (₹)</label>
+      <input id="amount" type="number" min="1" placeholder="For example, 500">
+      <div class="buttons">
+        <button onclick="changeMoney('deposit')">Deposit</button>
+        <button onclick="changeMoney('withdraw')">Withdraw</button>
+      </div>
+      <p id="message"></p>
+    </section>
+
+    <section class="card">
+      <h2>Recent transactions</h2>
+      <ul id="transactions">
+        <li>Account opened + ₹1,000.00</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>MyBank demo app · No real bank account or payments are connected.</p>
+  </footer>
+
+  <script>
+    let balance = 1000;
+
+    function changeMoney(action) {
+      const amount = Number(document.getElementById("amount").value);
+      const message = document.getElementById("message");
+
+      message.className = "";
+
+      if (amount <= 0) {
+        message.textContent = "Please enter an amount greater than zero.";
+        message.className = "error";
+        return;
+      }
+
+      if (action === "withdraw" && amount > balance) {
+        message.textContent = "Not enough money in your account.";
+        message.className = "error";
+        return;
+      }
+
+      if (action === "deposit") {
+        balance = balance + amount;
+      } else {
+        balance = balance - amount;
+      }
+
+      document.getElementById("balance").textContent = "₹" + balance.toFixed(2);
+
+      const sign = action === "deposit" ? "+" : "-";
+      const transaction = document.createElement("li");
+      transaction.textContent = action + " " + sign + " ₹" + amount.toFixed(2);
+      document.getElementById("transactions").prepend(transaction);
+
+      message.textContent = "Transaction successful!";
+      document.getElementById("amount").value = "";
+    }
+  </script>
+</body>
+</html>
