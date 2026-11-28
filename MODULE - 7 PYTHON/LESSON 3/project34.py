@@ -12,9 +12,31 @@ def is_armstrong_number(number):
 
 number = int(input("Enter a number: "))
 
-if is_armstrong_number(number):
-    print(number, "is an Armstrong number")
+if number < 0:
+    print("\n==============================")
+    print("  INVALID ARMSTRONG CHECK")
+    print("==============================")
+    print("Negative numbers cannot be Armstrong numbers.")
 else:
-    print(number, "is not an Armstrong number")
+    digits = str(number)
+    power = len(digits)
+    breakdown = " + ".join(
+        f"{digit}^{power}" for digit in digits
+    )
+    calculation = sum(int(digit) ** power for digit in digits)
+
+    print("\n==============================")
+    print("  ARMSTRONG NUMBER REPORT")
+    print("==============================")
+    print("Number:", number)
+    print("Digit count:", power)
+    print("Calculation:", breakdown)
+    print("Result:", calculation)
+
+    if is_armstrong_number(number):
+        print("Verdict: YES - it is an Armstrong number!")
+    else:
+        print("Verdict: NO - it is not an Armstrong number.")
+    print("==============================")
 
         
